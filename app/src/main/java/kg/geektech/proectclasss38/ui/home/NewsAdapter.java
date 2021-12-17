@@ -1,6 +1,8 @@
 package kg.geektech.proectclasss38.ui.home;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import kg.geektech.proectclasss38.OnItemClickListener;
@@ -18,12 +21,14 @@ import kg.geektech.proectclasss38.models.News;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
+    private Context context;
     private ArrayList<News> list;
 
     private OnItemClickListener onItemClickListener;
 
     public NewsAdapter(Context context) {
         list = new ArrayList<>();
+        this.context = context;
     }
 
     @NonNull
@@ -75,11 +80,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             });
         }
 
+        @SuppressLint("ResourceType")
         public void bind(News news) {
+            @SuppressLint("SimpleDateFormat")SimpleDateFormat date = new SimpleDateFormat("dd.MM HH:ss");
+            String a = date.format(news.getCreatedAt());
+            binding.date1.setText(a);
             binding.textTitle.setText(news.getTitle());
             if (getAdapterPosition() % 2 == 1) {
                 itemView.setBackgroundResource(R.color.black);
                 binding.textTitle.setBackgroundResource(R.color.white);
+                binding.date1.setBackgroundResource(R.color.white);
             }
 
         }
