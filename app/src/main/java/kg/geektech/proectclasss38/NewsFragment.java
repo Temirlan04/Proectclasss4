@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import kg.geektech.proectclasss38.databinding.FragmentHomeBinding;
 import kg.geektech.proectclasss38.databinding.FragmentNewsBinding;
+import kg.geektech.proectclasss38.models.News;
 
 
 public class NewsFragment extends Fragment {
@@ -36,7 +37,7 @@ public class NewsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+             public void onClick(View v) {
                 save();
             }
         });
@@ -44,8 +45,9 @@ public class NewsFragment extends Fragment {
 
     private void save() {
        String text = binding.editText.getText().toString();
+        News news = new News(text, System.currentTimeMillis());
        Bundle bundle = new Bundle();
-       bundle.putString("text", text);
+       bundle.putSerializable("news", news);
        getParentFragmentManager().setFragmentResult("rk_news", bundle);
        close();
 
