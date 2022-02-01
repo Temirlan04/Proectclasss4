@@ -107,7 +107,6 @@ public class HomeFragment extends Fragment {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
                 dialog.dismiss();
                 adapter.notifyItemRemoved(position);
                 adapter.removelist(position);

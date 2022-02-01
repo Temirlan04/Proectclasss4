@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/yellow"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_marginVertical="76dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="200dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/image2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Title"
+        android:textSize="30sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:id="@+id/textDec"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Description"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/textDec"
+        android:layout_marginStart="75dp"
+        android:layout_marginVertical="250dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="75dp"
+        android:background="@drawable/button23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:textAllCaps="false"
+        android:textSize="19sp"
+        />
+    <Button
+        android:id="@+id/btnSkip"
+        android:layout_marginStart="250dp"
+        android:layout_marginVertical="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/button24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:textAllCaps="false"
+        android:textSize="19sp"
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
